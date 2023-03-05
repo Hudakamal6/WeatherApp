@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.weatherapp.homescreen.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="lat"
+            app:argType="float" />
+        <argument
+            android:name="long"
+            app:argType="float" />
+        <argument
+            android:name="unit"
+            app:argType="string"
+            android:defaultValue="standrad" />
+        <argument
+            android:name="comeFrom"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.weatherapp.settingsscreen.view.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.weatherapp.splashscreen.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_intialFragment"
+            app:destination="@id/intialFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/intialFragment"
+        android:name="com.example.weatherapp.startscreen.IntialFragment"
+        android:label="@string/initial_setup"
+        tools:layout="@layout/fragment_intial">
+        <action
+            android:id="@+id/action_intialFragment_to_homeFragment22"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+</navigation>

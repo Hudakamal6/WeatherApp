@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chanelName">SafyWeather</string>
+    <string name="channel_description">No Alerts For Today</string>
+
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <string name="alerts">Alerts</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="location">Location</string>
+    <string name="unit">Units</string>
+    <string name="notifications">Notifications</string>
+    <string name="alertNot">Notifications</string>
+    <string name="alertAlarm">Alarm</string>
+
+    <string name="Celsius">°C</string>
+    <string name="Fahrenheit">°F</string>
+    <string name="Kelvin">°K</string>
+    <string name="windMeter">m/s</string>
+    <string name="windMile">M/h</string>
+
+    <string name="arabic">Arabic</string>
+    <string name="english">English</string>
+    <string name="standard">Standard</string>
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
+    <string name="gps">GPS</string>
+    <string name="maps">Maps</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+
+    <string name="metricDesc">(Temprature: Celsius &amp; Wind speed: meter/sec)</string>
+    <string name="standardDesc">(Temprature: Kelvin &amp; Wind speed: meter/sec)</string>
+    <string name="imperialDesc">(Temprature: Fahrenheit &amp; Wind speed: miles/hour)</string>
+    <string name="initial_setup">Initial setup</string>
+    <string name="ok">OK</string>
+    <string name="save">save</string>
+    <string name="delete">delete</string>
+    <string name="cancel">cancel</string>
+    <string name="deleteMsg">Are you sure to delete this item ?</string>
+    <string name="saveLocation">Are you sure to save this location ?</string>
+    <string name="initial_setup_desc">How would like to access a location weather?</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_speed">Wind speed</string>
+    <string name="clouds">Clouds</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="warning">when you disable the notifications you cannot receive alerts about the weather!</string>
+    <string name="sorry">Sorry cannot save this alarm! you should enable the notifications</string>
+    <string name="networkWarning">please, check your network!</string>
+</resources>
