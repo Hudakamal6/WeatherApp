@@ -2,85 +2,99 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="120dp"
-    android:layout_height="wrap_content"
+    android:layout_width="100dp"
+    android:layout_height="150dp"
     android:layout_margin="5dp"
-    android:background="@color/material_dynamic_tertiary70">
+    android:background="@drawable/rounded_corners">
 
     <TextView
         android:id="@+id/hourlyTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="30dp"
         android:padding="5dp"
         android:text="12:00"
-        android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/hourlyIcon"
-        android:layout_width="45dp"
+        android:layout_width="48dp"
         android:layout_height="45dp"
+        android:layout_marginBottom="4dp"
         android:paddingHorizontal="5dp"
         android:paddingBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyTemp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourlyTemp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/hourlyTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="4dp"
         android:paddingHorizontal="5dp"
         android:paddingBottom="5dp"
         android:text="40"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/hourlyTempUnit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourlyTime" />
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyWindUnit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/hourlyTempUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="19dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
         android:text="@string/Celsius"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/hourlyIcon"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hourlyWindUnit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/hourlyTemp"
-        app:layout_constraintTop_toBottomOf="@+id/hourlyTime" />
+        app:layout_constraintTop_toBottomOf="@+id/hourlyIcon"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/hourlyWindSpeed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="58dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="112dp"
         android:paddingHorizontal="9dp"
         android:paddingBottom="5dp"
         android:text="12.12"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/hourlyWindUnit"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/hourlyTempUnit"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourlyIcon" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/hourlyWindUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="31dp"
+        android:layout_height="19dp"
         android:text="@string/windMeter"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toEndOf="@+id/hourlyWindSpeed"
-        app:layout_constraintTop_toBottomOf="@+id/hourlyIcon" />
+        app:layout_constraintTop_toTopOf="@+id/hourlyWindSpeed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
