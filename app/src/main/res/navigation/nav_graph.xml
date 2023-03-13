@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment2">
 
     <fragment
         android:id="@+id/homeFragment2"
@@ -12,10 +12,12 @@
         tools:layout="@layout/fragment_home" >
         <argument
             android:name="lat"
-            app:argType="float" />
+            app:argType="float"
+            android:defaultValue="0.0" />
         <argument
-            android:name="long"
-            app:argType="float" />
+            android:name="longg"
+            app:argType="float"
+            android:defaultValue="0.0" />
         <argument
             android:name="unit"
             app:argType="string"
@@ -29,7 +31,11 @@
         android:id="@+id/settingsFragment2"
         android:name="com.example.weatherapp.settingsscreen.view.SettingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment2_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.weatherapp.splashscreen.SplashFragment"
@@ -50,5 +56,83 @@
         <action
             android:id="@+id/action_intialFragment_to_homeFragment22"
             app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_intialFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.weatherapp.maps.MapsFragment"
+        android:label="MapsFragment" >
+        <argument
+            android:name="isHome"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_mapsFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_mapsFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_alertsFragment"
+            app:destination="@id/alertsFragment" />
+        <argument
+            android:name="isAlert"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.weatherapp.favorite.view.FavoriteFragment"
+        android:label="FavoriteFragment" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="lon"
+            app:argType="float"
+            android:defaultValue="0" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue='Empty' />
+        <action
+            android:id="@+id/action_favoriteFragment_to_favDetailsFragment"
+            app:destination="@id/favDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertsFragment"
+        android:name="com.example.weatherapp.alerts.view.AlertsFragment"
+        android:label="fragment_alerts"
+        tools:layout="@layout/fragment_alerts" >
+        <action
+            android:id="@+id/action_alertsFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="lon"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
+    <fragment
+        android:id="@+id/favDetailsFragment"
+        android:name="com.example.weatherapp.favorite.view.FavDetailsFragment"
+        android:label="FavDetailsFragment" >
+        <argument
+            android:name="lat"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <argument
+            android:name="lon"
+            app:argType="float"
+            android:defaultValue="0.0" />
     </fragment>
 </navigation>

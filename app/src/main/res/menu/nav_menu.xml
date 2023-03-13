@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:background="@color/main_color">-->
+<!--    <group android:checkableBehavior="single">-->
+<!--        <item-->
+<!--            android:id="@+id/homeFragment"-->
+<!--            android:title="@string/home"-->
+<!--            android:icon="@drawable/ic_home" />-->
+<!--        <item-->
+<!--            android:id="@+id/favoriteFragment"-->
+<!--            android:title="@string/favorites"-->
+<!--            android:icon="@drawable/ic_favorite"/>-->
+<!--        <item-->
+<!--            android:id="@+id/settingsFragment"-->
+<!--            android:title="@string/settings"-->
+<!--            android:icon="@drawable/ic_settings"/>-->
+<!--        <item-->
+<!--            android:id="@+id/alertsFragment"-->
+<!--            android:title="@string/alerts"-->
+<!--            android:icon="@drawable/ic_notifications"/>-->
+<!--    </group>-->
+<!--</menu>-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"  />
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/alerts"
+        android:icon="@drawable/ic_baseline_add_alert_24"
+        android:title="Alerts" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings" />
+</menu>
