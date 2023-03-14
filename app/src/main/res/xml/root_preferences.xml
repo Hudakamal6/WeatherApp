@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_location"
+        android:title="@string/weather_Location">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:key="USE_DEVICE_LOCATION"
+            android:summary="@string/gps_description"
+            android:title="@string/gps" />
+        <Preference
+            android:dependency="USE_DEVICE_LOCATION"
+            android:key="CUSTOM_LOCATION"
+            android:summary="@string/map_description"
+            android:title="@string/map" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:icon="@drawable/ic_transform"
+        android:title="@string/units">
+        <ListPreference
+            android:defaultValue="METRIC"
+            android:entries="@array/unit_system_entries"
+            android:entryValues="@array/unit_system_values"
+            android:key="unit"
+            android:summary="%s"
+            android:title="@string/unit_system" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:icon="@drawable/ic_language"
+        android:title="@string/language">
+        <ListPreference
+            android:defaultValue="en"
+            android:entries="@array/languages_entries"
+            android:entryValues="@array/languages_values"
+            android:key="language"
+            android:summary="%s"
+            android:title="@string/app_language" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/notification"
+        app:icon="@drawable/ic_notifications">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notification_prefrence_key"
+            android:summary="@string/notificaion_description"
+            android:title="@string/notification" />
+    </PreferenceCategory>
+</PreferenceScreen>
