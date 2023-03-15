@@ -4,50 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_tertiary99"
     tools:context=".alerts.view.AlertsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/alertRecycler"
+        android:id="@+id/rv_alerts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="75dp"
+        android:background="@drawable/backgroundd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingAddAlert"
-        android:layout_width="65dp"
-        android:layout_height="73dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@color/main_color"
-        android:backgroundTint="@color/main_color"
+        android:id="@+id/fab_alerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
         android:focusable="true"
-        app:fabSize="normal"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/main_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alertRecycler"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_add"
-        app:tint="@color/lightGrayFont" />
-
-    <Button
-        android:id="@+id/locBtn"
-        android:layout_width="232dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/main_color"
-        android:text="@string/anotherlocation"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingAddAlert"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+

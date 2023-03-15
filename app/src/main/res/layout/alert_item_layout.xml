@@ -11,14 +11,15 @@
 
     <TextView
         android:id="@+id/fromTimeAlert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="232dp"
+        android:layout_height="37dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:text="2:00"
+        android:text="@string/from"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fromDateAlert"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +31,6 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="3dp"
-        android:text="14:00"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/toDateAlert"
@@ -43,22 +43,23 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/toTimeAlert"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/fromTimeAlert"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51"
+        app:layout_constraintVertical_bias="0.666"
         app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
 
     <TextView
         android:id="@+id/fromDateAlert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="215dp"
+        android:layout_height="27dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
-        android:text="20 may"
+        android:text="@string/fromm"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fromTimeAlert" />
@@ -70,7 +71,6 @@
         android:layout_marginTop="3dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="3dp"
-        android:text="20 may"
         android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,8 +79,8 @@
 
     <ImageView
         android:id="@+id/removeAlert"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
+        android:layout_width="46dp"
+        android:layout_height="60dp"
         android:layout_margin="10dp"
         android:src="@drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,14 +88,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="40dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/fromDateAlert"
-        app:layout_constraintHorizontal_bias="0.577"
+        android:id="@+id/imageView9"
+        android:layout_width="48dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/fromTimeAlert"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fromTimeAlert"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_notifications_active_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

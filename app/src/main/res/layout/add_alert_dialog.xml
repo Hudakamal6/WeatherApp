@@ -1,166 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:background="@drawable/rounded_corners2"
-    android:orientation="vertical">
+    android:backgroundTint="@color/main_color"
+    android:elevation="12dp"
+    app:cardCornerRadius="8dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corners2"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="141dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/rg"
+            app:layout_constraintEnd_toStartOf="@+id/tv_start_date"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/rounded_corners2"
-            android:text="Start"
-            android:textAlignment="center"
+            android:id="@+id/tv_location"
+            android:layout_width="289dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/anotherAlertLocation"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/rounded_corners2"
-            android:text="End"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <LinearLayout
-            android:id="@+id/linearAlertFrom"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/rounded_corners2"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/fromTimeDialog"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/rounded_corners2"
-                android:text="12:00"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/fromDateDialog"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/rounded_corners2"
-                android:text="20 may"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearAlertTo"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="0.5"
-            android:background="@drawable/rounded_corners2"
-            android:orientation="vertical"
-            android:weightSum="1">
-
-            <TextView
-                android:id="@+id/toTimeDialog"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/rounded_corners2"
-                android:text="12:00"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/toDateDialog"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"
-                android:background="@drawable/rounded_corners2"
-                android:text="20 may"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/alarmForAlert"
+        <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="@string/alertNot"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_start_date"
+            android:layout_width="181dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="112dp"
+            android:text="@string/chooseDate"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/rg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.764" />
+
+        <RadioButton
+            android:id="@+id/rbAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/gray"
+            android:checked="true"
             android:text="@string/alertAlarm"
             android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+            android:textColorHighlight="@color/gray"
+            android:textColorHint="@color/gray"
+            android:textColorLink="@color/gray"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rg"
+            app:layout_constraintTop_toTopOf="@+id/rg" />
 
-        <RadioButton
-            android:id="@+id/notificationForAlert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/notifications"
-            android:textColor="@color/white"
-            android:textSize="17dp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="40dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="76dp"
+            app:layout_constraintBottom_toTopOf="@+id/rbAlarm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.937"
+            app:layout_constraintStart_toStartOf="@+id/tv_location"
+            app:srcCompat="@drawable/ic_baseline_maps_ugc_24" />
 
-    </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="@drawable/rounded_corners2"-->
+<!--    android:orientation="vertical">-->
 
-    <Button
-        android:id="@+id/addAlertBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="60dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/buttons_rounded_corners"
-        android:text="@string/save"
-        android:textColor="@color/main_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/material_dynamic_tertiary99" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="1">-->
 
-</LinearLayout>
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:background="@drawable/rounded_corners2"-->
+<!--            android:text="@string/start"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:background="@drawable/rounded_corners2"-->
+<!--            android:text="@string/end"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="1">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearAlertFrom"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:background="@drawable/rounded_corners2"-->
+<!--            android:orientation="vertical"-->
+<!--            android:weightSum="1">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/fromTimeDialog"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:background="@drawable/rounded_corners2"-->
+<!--                android:text="12:00"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/fromDateDialog"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:background="@drawable/rounded_corners2"-->
+<!--                android:text="@string/datee"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linearAlertTo"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_weight="0.5"-->
+<!--            android:background="@drawable/rounded_corners2"-->
+<!--            android:orientation="vertical"-->
+<!--            android:weightSum="1">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/toTimeDialog"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:background="@drawable/rounded_corners2"-->
+<!--                android:text="12:00"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="24dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/toDateDialog"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="0.5"-->
+<!--                android:background="@drawable/rounded_corners2"-->
+<!--                android:text="@string/datee"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <RadioGroup-->
+<!--        android:id="@+id/radioGroup"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginHorizontal="32dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/alarmForAlert"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:text="@string/alertAlarm"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/notificationForAlert"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/notifications"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="17dp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </RadioGroup>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/addAlertBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginHorizontal="60dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/buttons_rounded_corners"-->
+<!--        android:text="@string/save"-->
+<!--        android:textColor="@color/main_color"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:backgroundTint="@color/material_dynamic_tertiary99" />-->
+
+<!--</LinearLayout>-->
