@@ -3,28 +3,48 @@ package com.example.weatherapp.homescreen.viewmodel
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.*
+import com.example.weatherapp.database.FavState
 import com.example.weatherapp.model.Repository
+import com.example.weatherapp.model.RepositoryInterface
 import com.example.weatherapp.model.Settings
 import com.example.weatherapp.model.WeatherForecast
+import com.example.weatherapp.network.RetroFitState
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
 
-class HomeViewModel(val _repo:Repository): ViewModel() {
+class HomeViewModel(val _repo:RepositoryInterface): ViewModel() {
 
+    var apiState = MutableStateFlow<RetroFitState>(RetroFitState.Loading(""))
 
-    suspend fun getWeather(lat: Double, long: Double): WeatherForecast {
-        var weather: WeatherForecast? = null
-        val job = viewModelScope.launch(Dispatchers.IO) {
-            weather = _repo.getCurrentWeatherWithLocationInRepo(lat, long, "metric")
-        }
-        job.join()
-
-        Log.i(TAG, "getWeather: ${weather!!.hourly[0].weather}")
-
-        return weather as WeatherForecast
-
+//    suspend fun getWeather(lat: Double, long: Double,lang:String, unit:String): WeatherForecast {
+//        var weather: WeatherForecast? = null
+//        val job = viewModelScope.launch(Dispatchers.IO) {
+//            weather = _repo.getCurrentWeatherWithLocationInRepo(lat, long,lang,unit )
+//        }
+//        job.join()
+//
+//        Log.i(TAG, "getWeather: ${weather!!.hourly[0].weather}")
+//
+//        return weather as WeatherForecast
+//
+//    }
+   suspend fun getWeather(lat: Double, long: Double,lang:String, unit:String): MutableStateFlow<RetroFitState> {
+    var weather: WeatherForecast
+    viewModelScope.launch(Dispatchers.IO) {
+        _repo.getCurrentWeatherWithLocationInRepo(lat, long, lang, unit)
+            .catch {
+                apiState.value = RetroFitState.onFail(it)
+            }.collect {
+                weather = it
+                apiState.value = RetroFitState.onSuccess(weather)
+            }
     }
+    return apiState
+}
 
 
     fun getLocationSP(): LatLng? {
