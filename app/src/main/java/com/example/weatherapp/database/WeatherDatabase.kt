@@ -9,7 +9,7 @@ import com.example.weatherapp.model.AlertData
 import com.example.weatherapp.model.WeatherForecast
 import com.example.weatherapp.utilities.WeatherConverter
 
-@Database(entities = arrayOf(WeatherForecast::class,AlertData::class), version = 2)
+@Database(entities = arrayOf(WeatherForecast::class,AlertData::class), version = 3)
 @TypeConverters(WeatherConverter::class)
 
 abstract class WeatherDatabase:RoomDatabase(){

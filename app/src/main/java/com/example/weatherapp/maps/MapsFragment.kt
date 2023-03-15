@@ -17,7 +17,7 @@ import com.example.weatherapp.model.Repository
 import com.example.weatherapp.model.Settings
 import com.example.weatherapp.network.RemoteSource
 import com.example.weatherapp.utilities.Constants.MY_SHARED_PREFERENCES
-import com.example.weatherapp.utilities.CurrentUser
+import com.example.weatherapp.utilities.UserHelper
 import com.example.weatherapp.utilities.LocalHelper
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -32,7 +32,6 @@ class MapsFragment : Fragment() {
     private val args: MapsFragmentArgs by navArgs()
     private lateinit var repo: Repository
 
-    // TODO: duplicated setting object we need setting class
     private var setting: Settings? = null
     private val callback = OnMapReadyCallback { googleMap ->
         moveCamera(googleMap)
@@ -66,8 +65,8 @@ class MapsFragment : Fragment() {
     fun moveCamera(
         map: GoogleMap,
         location: LatLng = LatLng(
-            CurrentUser.location.latitude,
-            CurrentUser.location.longitude
+            UserHelper.location.latitude,
+            UserHelper.location.longitude
         )
     ) {
         map.addMarker(MarkerOptions().position(location))
@@ -85,7 +84,7 @@ class MapsFragment : Fragment() {
             dialogBuilder.setMessage(getString(R.string.saveLocation))
                 .setCancelable(false)
                 .setPositiveButton(getString(R.string.save)) { dialog, id ->
-                    nextDestination(it)
+                    goTo(it)
                     dialog.cancel()
                 }
                 .setNegativeButton(getString(R.string.cancel)) { dialog, id -> dialog.cancel() }
@@ -94,24 +93,32 @@ class MapsFragment : Fragment() {
         }
     }
 
-    fun nextDestination(loc: LatLng) {
+    fun goTo(loc: LatLng) {
 
         repo.addWeatherToSHP(loc)
         if (args.isHome) {
-            CurrentUser.location = loc
+            UserHelper.location = loc
             repo.addSettingsToSharedPreferences(setting!!)
             repo.addWeatherToSHP(LatLng(loc.latitude, loc.longitude))
-            CurrentUser.location = LatLng(loc.latitude, loc.longitude)
 
             val action = MapsFragmentDirections.actionMapsFragmentToHomeFragment2().setLat(loc.latitude.toFloat()).setLongg(loc.longitude.toFloat())
             navController.navigate(action)
-          //  Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.homeFragment2)
         }
-        else if(args.isAlert){
+         if(args.isAlert){
             val action = MapsFragmentDirections.actionMapsFragmentToAlertsFragment().setLat(loc.latitude.toFloat()).setLon(loc.longitude.toFloat())
             navController.navigate(action)
         }
-        else {
+         if(args.isSettings) {
+             UserHelper.location = loc
+             repo.addSettingsToSharedPreferences(setting!!)
+             repo.addWeatherToSHP(LatLng(loc.latitude, loc.longitude))
+
+             val action = MapsFragmentDirections.actionMapsFragmentToSettingsFragment2()
+             navController.navigate(action)
+
+        }
+
+        if (args.isFav) {
            val action = MapsFragmentDirections.actionMapsFragmentToFavoriteFragment()
                .setLon(loc.longitude.toFloat())
                .setLat(loc.latitude.toFloat())
@@ -121,7 +128,7 @@ class MapsFragment : Fragment() {
                        loc.latitude,
                        loc.longitude
                    )
-               )
+               ).setIsMap(true)
            navController.navigate(action)
       }
     }

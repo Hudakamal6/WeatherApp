@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/material_dynamic_tertiary99"
+        android:background="@drawable/backgroundd"
         tools:context=".com.example.weatherapp.homescreen.view.HomeFragment">
 
         <TextView
@@ -49,7 +54,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="7dp"
             android:background="@drawable/rounded_corners"
-            app:cardBackgroundColor="@color/basicPink"
+            app:cardBackgroundColor="@color/lilac"
             app:cardCornerRadius="25dp"
             app:cardElevation="15dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +103,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_discription" />
 
                 <TextView
-                    android:id="@+id/tv_temp_symbol"
+                    android:id="@+id/tvUnit"
                     android:layout_width="33dp"
                     android:layout_height="40dp"
                     android:layout_marginEnd="14dp"
@@ -325,7 +330,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:fontFamily="monospace"
-            android:text="Hourly Forecast"
+            android:text="@string/hourlyForcast"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -337,7 +342,7 @@
             android:layout_width="347dp"
             android:layout_height="47dp"
             android:layout_marginTop="16dp"
-            android:text="7-Days Forecast Weather"
+            android:text="@string/sevenday"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -379,7 +384,7 @@
             android:layout_height="37dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="90dp"
-            android:text="Date"
+            android:text="@string/date"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -387,3 +392,17 @@
             app:layout_constraintTop_toBottomOf="@+id/currCity" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">تطبيق النشره الجويه</string>
+    <string name="homee">الرئيسيه</string>
+    <string name="favorits">المفضله</string>
+    <string name="alertss">التنبيهات</string>
+    <string name="settingss">الاعدادات</string>
+    <string name="country">محافظه الجيزه</string>
+    <string name="date">15 مارس</string>
+    <string name="description">سماء صافيه</string>
+    <string name="tempretur">0.0</string>
+    <string name="unitt">°</string>
+    <string name="type">C</string>
+    <string name="humidityy">الرطوبه</string>
+    <string name="wind_speedd">سرعه الرياح</string>
+    <string name="pressuree">الضغط</string>
+    <string name="cloudss">السحب</string>
+    <string name="hourly_forecast">الساعات القادمه</string>
+    <string name="next_7_days">السبعه الايام القادمه</string>
+    <string name="time">02:00</string>
+    <string name="today">اليوم</string>
+    <string name="system_theme_description">اتباع النظام</string>
+    <string name="dark_theme_description">مظلم</string>
+    <string name="light_theme_description">ساطع</string>
+    <string name="english_language_preference_value">الانجليزيه</string>
+    <string name="arabic_language_preference_value">العربيه</string>
+    <!-- Themes Preferences -->
+    <string name="dark_theme_preference_value">مظلم</string>
+    <string name="light_theme_preference_value">ساطع</string>
+    <string name="system_theme_preference_value">اتباع النظام</string>
+
+    <string name="noting_to_show">الليسته فاضيه</string>
+    <string name="click_to_add_place">اضغط لإضافه مكان</string>
+    <string name="add">اضافه</string>
+    <string name="gps_description">السماح للتطبيق بمعرفه موقعك الحالي</string>
+    <string name="gpss">استخدم موقعك الحالي</string>
+    <string name="weather_Location">موقع الطقس</string>
+    <string name="map_description">اختر موقع من الخريطه</string>
+    <string name="map">الموقع</string>
+    <string name="units">الوحدات</string>
+    <string name="unit_system">وحدات النظام</string>
+    <string name="languagee">اللغه</string>
+    <string name="app_language">لغه التطبيق</string>
+    <string name="notification">الإشعارات</string>
+    <string name="notificaion_description">الاشعار بحاله الطقس من خلال تنبيه</string>
+    <string name="theme">أوضاع التطبيق</string>
+    <string name="app_theme">وضع التطبيق</string>
+    <string name="events">الحدث</string>
+    <string name="too">الي</string>
+    <string name="fromm">من</string>
+    <string name="soundtype">نوع التنبيه</string>
+    <string name="add_alert">اضافه تنبيه</string>
+    <string name="title_of_alert">الوصف</string>
+    <string name="no_alerts">لا يوجد تنبيهات</string>
+
+
+
+    <string name="channel_description">لا يوجد تنبيهات لليوم</string>
+
+    <string name="home">الرئيسية</string>
+    <string name="favorites">المفضلات</string>
+    <string name="alerts">التنبيهات</string>
+    <string name="settings">الاعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="location">الموقع</string>
+    <string name="unit">الوحدات</string>
+    <string name="notifications">الاشعارات</string>
+    <string name="alertNot">الاشعارات</string>
+    <string name="alertAlarm">المنبه</string>
+
+    <string name="Celsius">°C</string>
+    <string name="Fahrenheit">°F</string>
+    <string name="Kelvin">°K</string>
+    <string name="windMeter">m/s</string>
+    <string name="windMile">M/h</string>
+
+    <string name="arabic">العربية</string>
+    <string name="english">الانجليزية</string>
+    <string name="standard">اساسى</string>
+    <string name="metric">قياسى</string>
+    <string name="imperial">امبراطورى</string>
+    <string name="gps">GPS</string>
+    <string name="maps">الخرائط</string>
+    <string name="enabled">مفعل</string>
+    <string name="disabled">غير مفعل</string>
+
+    <string name="metricDesc">(درجة الحرارة : بالسيليزيوس - سرعةالرياح : بالمتر لكل ثانية )</string>
+    <string name="standardDesc">(درجة الحرارة : بالكلفن - سرعةالرياح : بالمتر لكل ثانية ))</string>
+    <string name="imperialDesc">(درجة الحرارة : بالفهرنهايت - سرعةالرياح : بالميل لكل ساعة )</string>
+    <string name="initial_setup">اعداد التطبيق</string>
+    <string name="ok">حسنا</string>
+    <string name="save">حفظ</string>
+    <string name="delete">حذف</string>
+    <string name="cancel">الغاء</string>
+    <string name="deleteMsg">هل تريد حقا ان تحذف هذا العنصر ؟</string>
+    <string name="saveLocation">هل تريد ان تحفظ هذا الموقع ؟</string>
+    <string name="initial_setup_desc">كيف تريد ان تحدد موقعك ؟</string>
+    <string name="humidity">الرطوبة</string>
+    <string name="pressure">الضغط</string>
+    <string name="wind_speed">سرعة الرياح</string>
+    <string name="clouds">السحب</string>
+    <string name="from">من</string>
+    <string name="to">الى</string>
+    <string name="warning">عندما تبطل الاشعارات لا يمكنك استلام التنبيهات بخصوص الطقس!</string>
+    <string name="sorry">نأسف لا يمكنك حفظ هذا التنبيه! يجب عليك تفعيل الاشعارات</string>
+    <string name="networkWarning">من فضلك تأكد من اتصالك بالشبكة!</string>
+
+    <string name="anotherAlertLocation"> اختر موقع اخر </string>
+
+    <string name="start">من</string>
+    <string name="end">الي</string>
+    <string name="datee">10 مارس</string>
+    <string name="chooseLoc">اختار الموقع </string>
+
+    <string name="hourlyForcast">مناخ الساعات القادمة</string>
+    <string name="sevenday">مناخ السبعة ايام القادمة</string>
+    <string name="chooseDate">اختار التاريخ</string>
+
+
+</resources>

@@ -2,6 +2,7 @@ package com.example.weatherapp.network
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import com.example.weatherapp.model.CurrentWeather
 import com.example.weatherapp.model.WeatherForecast
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,23 +15,45 @@ class RemoteSource : RemoteSourceInterface {
         }
     }
 
+  //  lateinit var currentWeather: WeatherForecast
 
-    override suspend fun getWeatherByLocation(lat: Double, long: Double, unit: String, lang: String): WeatherForecast {
+    override suspend fun getWeatherByLocation(
+        lat: Double,
+        long: Double,
+        unit: String,
+        lang: String
+    ): WeatherForecast {
 
         val apiService = RetroFitClient.getInstance().create(ApiInterface::class.java)
         Log.i(TAG, "called")
-        val response = apiService.getTheWholeWeather(lat,long,unit,"minutely",lang,"992213628dbceb7e7fb06cf59035697d")
+        val response = apiService.getTheWholeWeather(
+            lat,
+            long,
+            unit,
+            "minutely",
+            lang,
+            "992213628dbceb7e7fb06cf59035697d"
+        )
         Log.i(TAG, "called2 :${response.errorBody()}")
-        if(response.isSuccessful){
+        if (response.isSuccessful) {
             var result = response.body() as WeatherForecast
             Log.i(TAG, "DONE ${result.current.weather[0].description} response")
-        }
-        else{
+        } else {
             Log.i(TAG, "FAIL response${response.errorBody().toString()}")
         }
         return response.body() as WeatherForecast
     }
-
 }
+//       override suspend fun getCurrentWeather(lat: Double, long: Double, unit: String, lang: String) = flow {
+//        val apiService = RetroFitClient.getInstance().create(ApiInterface::class.java)
+//        Log.i("TAG", "getCurrentWeatherWithLocation: in Remooooote source apiService")
+//        val response = apiService.getTheWholeWeather(lat, long,unit, "minutely", lang, "992213628dbceb7e7fb06cf59035697d")
+//
+//        currentWeather = response.body() as WeatherForecast
+//
+//        emit(currentWeather)
+//    }
+//
+//}
 
 //992213628dbceb7e7fb06cf59035697d

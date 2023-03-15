@@ -55,13 +55,13 @@ class SplashFragment : Fragment() {
                navController.navigate(R.id.action_splashFragment_to_intialFragment)
             }
             else{
-                CurrentUser.location = currentWeather as LatLng
+                UserHelper.location = currentWeather as LatLng
                 val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment2()
-//                    .setLat(
-//                    currentWeather!!.latitude.toFloat()).setLongg(currentWeather!!.longitude.toFloat())
+                    .setLat(
+                    currentWeather!!.latitude.toFloat()).setLongg(currentWeather!!.longitude.toFloat())
                 navController.navigate(action)
             }
-        }, 1000)
+        }, 2500)
 
         return binding.root
 

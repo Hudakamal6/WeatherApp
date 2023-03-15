@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment2"
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.weatherapp.splashscreen.SplashFragment"
+        android:name="com.example.weatherapp.splash.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -81,6 +81,17 @@
             android:name="isAlert"
             app:argType="boolean"
             android:defaultValue="false" />
+        <argument
+            android:name="isSettings"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="isFav"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_mapsFragment_to_settingsFragment2"
+            app:destination="@id/settingsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -104,6 +115,10 @@
         <action
             android:id="@+id/action_favoriteFragment_to_favDetailsFragment"
             app:destination="@id/favDetailsFragment" />
+        <argument
+            android:name="isMap"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/alertsFragment"

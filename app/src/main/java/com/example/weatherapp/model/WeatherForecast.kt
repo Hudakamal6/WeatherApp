@@ -7,7 +7,7 @@ import java.io.Serializable
 import java.util.*
 
 @Entity(primaryKeys = arrayOf("lat", "lon"), tableName = "weathers")
-data class WeatherForecast(@NonNull
+data class WeatherForecast(
                            var lat:Double,
                            @NonNull
                            var lon:Double,
@@ -50,13 +50,15 @@ data class Alert (var senderName: String,
                   var event: String,
                   var start: Long,
                   var end: Long,
+                  var lat: Double,
+                  var long: Double,
                   var description: String,
                   var tags: List<String>)
 
-data class Settings(var language:Boolean,
-                    var unit:Int,
-                    var location:Int,
-                    var notification:Boolean)
+data class Settings(var language:Boolean =  true,
+                    var unit:Int =0 ,
+                    var location:Int = 1,
+                    var notification:Boolean = true)
 
 @Entity(primaryKeys = arrayOf("lat", "lon"), tableName = "addresses")
 data class WeatherAddress(var address:String,
@@ -65,10 +67,14 @@ data class WeatherAddress(var address:String,
                           @NonNull
                           var lon:Double)
 
-@Entity(tableName = "alerts")
-data class AlertData(var fromDate: Date,
-                     var toDate: Date,
-                     var notifyType:Boolean = true){
-    @PrimaryKey(autoGenerate = true)
-    var pKey:Int = 0
-}
+@Entity(tableName = "AlertsTable", primaryKeys = ["idHashLongFromLonLatStartStringEndStringAlertType"])
+data class AlertData(
+    val address: String,
+    val longitudeString: String,
+    val latitudeString: String,
+    val startString: String,
+    val endString: String,
+    val startDT: Int,
+    val endDT: Int,
+    val idHashLongFromLonLatStartStringEndStringAlertType: Long,
+    val alertType: String)

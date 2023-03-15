@@ -1,9 +1,72 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
+    <string name="app_name">Weather App</string>
+
+    <!-- Languages Preferences -->
+    <string name="english_language_preference_value">en</string>
+    <string name="arabic_language_preference_value">ar</string>
+    <!-- Themes Preferences -->
+    <string name="dark_theme_preference_value">Dark</string>
+    <string name="light_theme_preference_value">Light</string>
+    <string name="system_theme_preference_value">Follow System</string>
+
+    <string name="homee">Home</string>
+    <string name="favorits">Favorits</string>
+    <string name="alertss">Alerts</string>
+    <string name="settingss">Settings</string>
+    <string name="country">Giza, Government</string>
+    <string name="date">Sun, 6 March</string>
+    <string name="description">Clearly Sky</string>
+    <string name="tempretur">0.0</string>
+    <string name="unitt">°</string>
+    <string name="type">C</string>
+    <string name="humidityy">Humidity</string>
+    <string name="wind_speedd">Wind speed</string>
+    <string name="pressuree">Pressure</string>
+    <string name="cloudss">Clouds</string>
+    <string name="hourly_forecast">Hourly Forecast</string>
+    <string name="next_7_days"><![CDATA[Next 7 Days >]]></string>
+    <string name="time">02:00</string>
+    <string name="today">Today</string>
+    <!-- Preference Titles -->
+
+    <string name="theme_prefrence_key" translatable="false">theme_prefrence_key</string>
+    <string name="system_theme_description">System default</string>
+    <string name="dark_theme_description">Dark</string>
+    <string name="light_theme_description">Light</string>
+    <string name="title_of_alert">description</string>
+    <string name="dd_mm_yy" translatable="false">dd_mm_yy</string>
+    <string name="too">to</string>
+    <string name="fromm">From</string>
+    <string name="_00_00" translatable="false">00:00</string>
+    <string name="events">Events</string>
+    <string name="soundtype">soundType</string>
+    <string name="add_alert">add Alert</string>
+    <string name="_7_march" translatable="false">7 March</string>
+    <string name="_3_00_pm" translatable="false">3:00 PM</string>
+    <string name="_2_00_am" translatable="false">2:00 Am</string>
+    <string name="rain_alert" translatable="false">Rain Alert</string>
+    <string name="cairo" translatable="false">Cairo</string>
+    <string name="noting_to_show">Noting to show</string>
+    <string name="click_to_add_place">Click to add Place</string>
+    <string name="add">add</string>
+    <string name="gps_description">Allow the app to get your location</string>
+    <string name="gpss">GPS</string>
+    <string name="weather_Location">Weather Location</string>
+    <string name="map_description">Choose your location from Map</string>
+    <string name="map">Map</string>
+    <string name="units">Units</string>
+    <string name="unit_system">Unit System</string>
+    <string name="languagee">Language</string>
+    <string name="app_language">App Language</string>
+    <string name="notification">Notification</string>
+    <string name="notificaion_description">show current weather as Notification</string>
+    <string name="theme">Theme</string>
+    <string name="app_theme">App Theme</string>
+    <string name="no_alerts">No Alerts</string>
+    <string name="no_internet" translatable="false">No Internet</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="chanelName">SafyWeather</string>
+
     <string name="channel_description">No Alerts For Today</string>
 
     <string name="home">Home</string>
@@ -53,4 +116,16 @@
     <string name="warning">when you disable the notifications you cannot receive alerts about the weather!</string>
     <string name="sorry">Sorry cannot save this alarm! you should enable the notifications</string>
     <string name="networkWarning">please, check your network!</string>
+
+
+    <string name="anotherAlertLocation"> Choose Another Location</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="datee">10 March</string>
+    <string name="chooseLoc">Choose The Location</string>
+    <string name="hourlyForcast">Hourly Forecast</string>
+    <string name="sevenday">7-Day Forecast Weather</string>
+    <string name="chooseDate">Choose Date</string>
+
+
 </resources>

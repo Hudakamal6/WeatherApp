@@ -7,10 +7,9 @@ import com.google.android.gms.maps.model.LatLng
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoryInterface {
-    suspend fun getCurrentWeatherWithLocationInRepo(lat:Double, long:Double, lang :String,unit:String): WeatherForecast
-
+    suspend fun getCurrentWeatherWithLocationInRepo(lat:Double, long:Double, lang :String,unit:String):Flow<WeatherForecast>
+    suspend fun getFavWeather(lat:Double, long:Double, lang :String,unit:String ): WeatherForecast
     suspend fun storedLocations(): Flow<WeatherForecast>
-
     fun insertFavoriteWeather(weatherForecast: WeatherForecast)
     suspend fun searchWithLatLong(latLong :LatLng): Flow<WeatherForecast?>
     fun deleteFavoriteWeather(weatherForecast: WeatherForecast)
@@ -20,5 +19,6 @@ interface RepositoryInterface {
     fun getWeatherWithShP(): LatLng?
     fun insertAlert(alert: AlertData)
     fun deleteAlert(alert: AlertData)
-    fun getAllAlertsInRepo(): LiveData<List<AlertData>>
+    fun getAllAlertsInRepo (): LiveData<List<AlertData>>
+
 }

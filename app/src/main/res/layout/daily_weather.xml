@@ -5,16 +5,16 @@
     android:layout_width="wrap_content"
     android:layout_height="130dp"
     android:layout_margin="5dp"
-    android:background="@drawable/rounded_corners"
-    android:backgroundTint="#EBC7E8"
+    android:background="@color/lilac"
+    android:backgroundTint="@color/lilac"
     android:elevation="@dimen/cardview_compat_inset_shadow"
-    app:cardMaxElevation="30dp"
-    app:cardCornerRadius="40dp">
+    app:cardCornerRadius="40dp"
+    app:cardMaxElevation="30dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="367dp"
         android:layout_height="match_parent"
-        android:background="@drawable/rounded_corners">
+        android:background="@color/lilac">
 
         <TextView
             android:id="@+id/dailyDate"

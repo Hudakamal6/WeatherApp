@@ -2,6 +2,7 @@ package com.example.weatherapp.database
 
 
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.weatherapp.model.AlertData
 import com.example.weatherapp.model.WeatherForecast
@@ -21,8 +22,8 @@ interface WeatherDAO {
     @Query("SELECT * FROM weathers WHERE lat == :latt AND lon == :longg")
     fun searchWithLatLong(latt:Double, longg:Double): WeatherForecast
 
-    @Query("SELECT * FROM alerts")
-    fun getAllStoredAlerts():List<AlertData>
+    @Query("SELECT * FROM AlertsTable")
+    fun getAllStoredAlerts(): LiveData<List<AlertData>>
 
     @Insert(onConflict =OnConflictStrategy.REPLACE)
     fun insertAlert(alert: AlertData)
